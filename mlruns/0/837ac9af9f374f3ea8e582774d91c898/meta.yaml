@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/harkum/OneDrive%20-%20INVENTVM%20SEMICONDUCTOR%20SRL/Documents/ml/projects/MLops/End_End_Ml_project_with_mlflow/mlruns/0/837ac9af9f374f3ea8e582774d91c898/artifacts
+end_time: 1708265906813
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 837ac9af9f374f3ea8e582774d91c898
+run_name: gifted-toad-261
+run_uuid: 837ac9af9f374f3ea8e582774d91c898
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1708265900051
+status: 3
+tags: []
+user_id: harkum
