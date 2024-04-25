@@ -1,7 +1,6 @@
 # Your workflow name.
 name: Ml-CI-CT-CD
 
-# Run workflow on every push to main branch.
 on:
   push:
     branches: [master]
