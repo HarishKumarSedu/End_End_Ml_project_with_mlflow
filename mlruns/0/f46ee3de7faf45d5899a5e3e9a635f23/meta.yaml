@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/harkum/Documents/mlProjects/End-to-end-Machine-Learning-Project-with-MLflow/mlruns/0/f46ee3de7faf45d5899a5e3e9a635f23/artifacts
+end_time: 1714071587923
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f46ee3de7faf45d5899a5e3e9a635f23
+run_name: auspicious-skunk-606
+run_uuid: f46ee3de7faf45d5899a5e3e9a635f23
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714071582221
+status: 3
+tags: []
+user_id: harkum
