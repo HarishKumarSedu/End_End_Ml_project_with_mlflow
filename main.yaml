@@ -1,1 +1,23 @@
-name: 
+name: Ml-Pipeline-CI-CT-CD
+
+on:
+  push:
+    branches: [test]
+  workflow-dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.1x]
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
