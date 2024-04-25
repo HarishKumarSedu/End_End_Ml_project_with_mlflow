@@ -10,7 +10,7 @@ on:
 
 # Your workflows jobs.
 jobs:
-    Build:
+    setup:
       runs-on: ubuntu-latest
       strategy:
         matrix:
