@@ -1,6 +1,6 @@
 pandas 
-mlflow
-notebook
+# mlflow
+# notebook
 numpy
 scikit-learn
 matplotlib
@@ -12,4 +12,6 @@ joblib
 types-PyYAML
 Flask
 Flask-Cors
-# -e .
+waitress
+gunicorn
+-e .

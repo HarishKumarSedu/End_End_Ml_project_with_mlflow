@@ -1,0 +1,7 @@
+artifacts 
+build 
+dist 
+env 
+.github
+.pytest_cache
+logs
