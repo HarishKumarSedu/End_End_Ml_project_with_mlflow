@@ -40,4 +40,4 @@ jobs:
            python --version 
         - name: Test Pipline locally 
           run: |
-            if [ -f main.py ]; then python main.py; fi
+            if [ -f main.py ]; then python.exe main.py; fi
