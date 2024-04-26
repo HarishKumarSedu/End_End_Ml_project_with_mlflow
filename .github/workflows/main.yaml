@@ -61,7 +61,39 @@ jobs:
           run: |
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-            gunicorn --workers=4 --bind 0.0.0.0:5000 app:app &
+            gunicorn --workers=4 --bind 127.0.0.1:5000 app:app &
             sleep 10
             curl http://127.0.0.1:5000/
 
+    Dockerize:
+      runs-on: ubuntu-latest
+      steps:
+      -
+          name: Checkout
+          uses: actions/checkout@v4
+      -
+          name: Login to Docker Hub
+          uses: docker/login-action@v3
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+          name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v3
+      -
+          name: Build and push
+          uses: docker/build-push-action@v5
+          with:
+            context: .
+            file: ./Dockerfile
+            push: true
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest
+      - 
+        name: Run docker Image ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest
+        run: docker run -d -p 5000:5000 --name=mlapp ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest 
+
+      - name: Execute Ml Pipeline inside docker
+        run: docker exec -it mlapp bash -c "python main.py" 
+      
+      - name: Test Docker app 
+        run:  curl http://127.0.0.1:5000/
