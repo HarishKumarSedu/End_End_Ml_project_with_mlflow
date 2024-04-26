@@ -49,7 +49,7 @@ jobs:
             python main.py
     Test-application-locally:
       runs-on: ubuntu-latest
-      needs: [setup]
+      needs: [Test-pipeline-locally]
       steps:
         - name: Check the Python Version 
           run: |
