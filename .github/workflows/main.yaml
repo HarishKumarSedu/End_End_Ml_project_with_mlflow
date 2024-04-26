@@ -57,13 +57,11 @@ jobs:
         - name: check out the code 
           uses: actions/checkout@v2
 
-        - name: Run Application Locally
+        - name: Run and Application Locally
           run: |
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
             python app.py
         
-        - name: Test Application 
-          run: |
             curl http://127.0.0.1:5000/
 
