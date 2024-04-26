@@ -33,3 +33,10 @@ jobs:
       - name: Test Pipline locally 
         run: |
           python main.py 
+  
+    py-version:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check the Python Version 
+          run: |
+           python --version 
