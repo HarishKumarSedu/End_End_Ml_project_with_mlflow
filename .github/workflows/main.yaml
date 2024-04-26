@@ -10,20 +10,20 @@ on:
 
 # Your workflows jobs.
 jobs:
-    setup:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          python-version: [3.9]
+    # setup:
+    #   runs-on: ubuntu-latest
+    #   strategy:
+    #     matrix:
+    #       python-version: [3.9]
 
-      steps:
-      - name: Check out code
-        uses: actions/checkout@v2
+    #   steps:
+    #   - name: Check out code
+    #     uses: actions/checkout@v2
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
+    #   - name: Set up Python ${{ matrix.python-version }}
+    #     uses: actions/setup-python@v2
+    #     with:
+    #       python-version: ${{ matrix.python-version }}
   
       # - name: Install Dependencies 
       #   run: |
@@ -98,5 +98,5 @@ jobs:
           docker ps 
           docker run -d -p 5000:5000 --name=mlapp ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest 
           # docker exec -it mlapp bash -c "python main.py" 
-          # sleep 10 
+          sleep 10 
           curl http://127.0.0.1:5000/
