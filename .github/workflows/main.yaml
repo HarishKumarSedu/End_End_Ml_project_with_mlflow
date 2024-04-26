@@ -92,8 +92,8 @@ jobs:
       - 
         name: Run docker Image ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest
         run: |
-          docker run -p 6000:6000 --name=mlapp ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest 
+          docker run -p 5000:5000 --name=mlapp ${{ secrets.DOCKERHUB_USERNAME }}/mlapp:latest 
           docker ps 
           # docker exec -it mlapp bash -c "python main.py" 
           # sleep 10 
-          # curl http://127.0.0.1:6000/
+          curl http://127.0.0.1:6000/
