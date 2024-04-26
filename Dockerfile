@@ -1,8 +1,8 @@
-FROM python:3.9
-
-WORKDIR /app
-
+FROM python:3.7
 COPY . /app
+WORKDIR /app
+RUN pip install --upgrade pip 
 RUN pip install -r requirements.txt
-
-CMD ["python3", "app.py"]
+EXPOSE $PORT
+CMD waitress-serve --listen=127.0.0.1:$PORT app:app
+# CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
